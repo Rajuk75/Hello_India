@@ -45,10 +45,7 @@ app.set("views", path.join(__dirname, "views"));
 // Function to connect to MongoDB
 async function main() {
   try {
-    await mongoose.connect(dbUrl, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(dbUrl);
     console.log("MongoDB connected");
   } catch (err) {
     console.error("MongoDB connection error:", err);
