@@ -1,5 +1,92 @@
 <% layout("layouts/boilerplate") %>
 <body>
+  <style>
+    /* code for show.ejs*/
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+/* Listing Title */
+.listing-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Listing Card */
+.listing-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Listing Image */
+.listing-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Card Body */
+.listing-card-body {
+  padding: 15px;
+  background-color: #ffffff;
+}
+
+/* Listing Description */
+.listing-description {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Listing Details */
+.listing-details {
+  list-style-type: none;
+  padding: 0;
+}
+
+.listing-detail {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Edit Link */
+.edit-listing-link {
+  display: inline-block;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.edit-listing-link:hover {
+  text-decoration: underline;
+}
+
+/* Delete Button */
+.delete-listing-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-listing-button:hover {
+  background-color: #c82333;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 25px; /* Space between buttons */
+}
+
+  </style>
   <h3 class="listing-title"><%= listing.title %></h3>
 
   <div class="listing-card" style="width: 18rem;">

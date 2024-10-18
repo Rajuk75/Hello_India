@@ -1,5 +1,97 @@
 <% layout("layouts/boilerplate") %>
 <body>
+  <style>
+    /*css for new listing file new.ejs*/
+
+
+/* Form Container Styling */
+/* Form Container */
+.form-container {
+  background-color: #f8f9fa !important; /* Light gray background */
+  padding: 15px !important; /* Reduced padding around the container */
+  border-radius: 8px !important; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+  max-width: 600px !important; /* Set a maximum width for the container */
+  margin: 20px auto !important; /* Center the container */
+}
+
+/* Form Card */
+.form-card {
+  background-color: #ffffff !important; /* White background for form */
+  padding: 20px !important; /* Reduced padding inside the card */
+  border-radius: 8px !important; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(223, 5, 5, 0.705) !important; /* Subtle shadow */
+}
+
+/* Title Styling */
+.form-title {
+  font-size: 20px !important; /* Reduced title font size */
+  margin-bottom: 15px !important; /* Space below title */
+  margin-top: 10px !important; /* Adjusted space above title */
+  text-align: center !important; /* Center the title */
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 15px !important; /* Adjusted space between fields */
+}
+
+/* Form Row Styling */
+.form-row {
+  display: flex !important; /* Flexbox for row alignment */
+  gap: 10px !important; /* Space between fields in the row */
+}
+
+/* Form Column Styling */
+.form-column {
+  flex: 1; /* Equal width for columns */
+}
+
+/* Input and Textarea Styling */
+.form-control {
+  width: 100% !important; /* Full width */
+  padding: 10px !important; /* Padding inside inputs */
+  border: 1px solid #ccc !important; /* Border color */
+  border-radius: 4px !important; /* Rounded edges */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Inner shadow */
+  font-size: 16px !important; /* Font size */
+}
+
+/* Row for Price, Country, and Location */
+.form-row {
+  display: flex !important; /* Flexbox for alignment */
+  justify-content: space-between !important; /* Space between items */
+  margin-bottom: 15px !important; /* Space below the row */
+}
+
+/* Column Styling for Form Inputs */
+.form-column {
+  flex: 1 !important; /* Each column takes equal space */
+  margin-right: 10px !important; /* Right margin for space */
+}
+
+/* Remove right margin for the last column */
+.form-column:last-child {
+  margin-right: 0 !important;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #007bff !important; /* Bootstrap primary color */
+  color: white !important; /* White text color */
+  padding: 10px 15px !important; /* Padding for button */
+  border: none !important; /* No border */
+  border-radius: 5px !important; /* Rounded edges */
+  cursor: pointer !important; /* Pointer cursor on hover */
+  font-size: 16px !important; /* Font size */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3 !important; /* Darker shade on hover */
+}
+
+  </style>
+
   <div class="form-container mt-4">
     <div class="form-card">
       <h3 class="form-title">Create a New Listing</h3>

@@ -1,5 +1,78 @@
 <% layout("layouts/boilerplate") %>
 <body>
+  <style>
+    /* edit.ejs*?
+
+/* Title Styling */
+.edit-listing-title, .new-listing-title {
+  font-size: 24px !important;
+  margin-bottom: 20px !important;
+  margin-top: 20px;
+  text-align: center; /* Centered title */
+  
+}
+
+/* Form Container */
+.edit-listing-form, .new-listing-form {
+  max-width: 600px !important;
+  margin: auto !important;
+  padding: 30px !important; /* Increased padding */
+  border: 1px solid #ccc !important;
+  border-radius: 8px !important;
+  background-color: #e9f5ff !important; /* Specific background color */
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 15px !important;
+}
+
+/* Input and Textarea Styling */
+.form-input {
+  width: 100% !important;
+  padding: 10px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1) !important;
+  font-size: 16px !important;
+}
+
+/* Flex Container for Price, Country, and Location */
+.form-group-flex {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+/* Flex Item Styling */
+.flex-item {
+  flex: 1 !important;
+  margin-right: 10px !important; /* Space between items */
+}
+
+/* Remove right margin for the last flex item */
+.flex-item:last-child {
+  margin-right: 0 !important;
+}
+
+/* Submit Button Styling */
+.submit-button {
+  background-color: #007bff !important; /* Bootstrap primary color */
+  color: white !important;
+  border: none !important;
+  padding: 10px 15px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+}
+
+.submit-button:hover {
+  background-color: #0056b3 !important; /* Darker shade on hover */
+}
+
+
+
+
+  </style>
   <h3 class="edit-listing-title">Edit Your Listing</h3>
 
   <form class="edit-listing-form" 
