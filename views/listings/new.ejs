@@ -1,0 +1,117 @@
+<% layout("layouts/boilerplate") %>
+<body>
+  <div class="form-container mt-4">
+    <div class="form-card">
+      <h3 class="form-title">Create a New Listing</h3>
+      <form method="POST" action="/listings" novalidate class="needs-validation">
+
+        <!-- Title Field -->
+        <div class="form-group">
+          <label for="title" class="form-label">Title</label>
+          <input
+            name="listing[title]"
+            placeholder="Enter title"
+            type="text"
+            class="form-control"
+            id="title"
+            required
+          />
+          <div class="invalid-feedback">
+            Please enter a valid Title.
+          </div>
+        </div>
+
+        <!-- Description Field -->
+        <div class="form-group">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            name="listing[description]"
+            placeholder="Enter description"
+            class="form-control"
+            rows="4"
+            id="description"
+            required
+          ></textarea>
+          <div class="invalid-feedback">
+            Please enter a valid Description.
+          </div>
+        </div>
+
+        <!-- Image URL Field -->
+        <div class="form-group">
+          <label for="image" class="form-label">Image URL</label>
+          <input
+            name="listing[image][url]"
+            placeholder="Enter image URL/Link"
+            type="text"
+            class="form-control"
+            id="image"
+          />
+        </div>
+
+        <!-- Price, Country, and Location Fields in One Line -->
+        <div class="form-row">
+          <div class="form-column">
+            <label for="price" class="form-label">Price</label>
+            <input
+              name="listing[price]"
+              placeholder="Enter price"
+              type="number"
+              class="form-control"
+              id="price"
+              required
+            />
+            <div class="invalid-feedback">
+              Please enter a valid Price.
+            </div>
+          </div>
+          <div class="form-column">
+            <label for="country" class="form-label">Country</label>
+            <input
+              name="listing[country]"
+              placeholder="Enter country"
+              type="text"
+              class="form-control"
+              id="country"
+              required
+            />
+            <div class="invalid-feedback">
+              Please enter a valid country.
+            </div>
+          </div>
+          <div class="form-column">
+            <label for="location" class="form-label">Location</label>
+            <input
+              name="listing[location]"
+              placeholder="Enter location"
+              type="text"
+              class="form-control"
+              id="location"
+              required
+            />
+            <div class="invalid-feedback">
+              Please enter a valid Location.
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Add Listing</button>
+      </form>
+    </div>
+  </div>
+  <br>
+</body>

@@ -1,0 +1,99 @@
+<% layout("layouts/boilerplate") %> 
+<body>
+  <style>
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the filters */
+        margin: 2px auto; /* Reduced top margin */
+        padding: 10px; /* Padding around the filters */
+        max-width: 1000px; /* Limit the width of the filters */
+    }
+
+    .filter {
+        text-align: center;
+        margin: 0.5rem; /* Reduced margin around each filter */
+        transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for effects */
+        border: 1px solid #ddd; /* Light border around filters */
+        border-radius: 8px; /* Rounded corners */
+        padding: 10px; /* Padding inside each filter */
+        background-color: #f9f9f9; /* Background color for filters */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    }
+
+    .filter:hover {
+        transform: translateY(-5px); /* Slight upward movement on hover */
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        background-color: #e0e0e0; /* Slightly darker background on hover */
+    }
+
+    .filter i {
+        font-size: 20px; /* Decreased icon size */
+        color: #333; /* Icon color */
+        margin-bottom: 5px; /* Reduced space between icon and text */
+    }
+
+    .filter p {
+        font-size: 12px; /* Decreased text size */
+        color: #555; /* Text color */
+        margin: 0; /* Remove default margin */
+    }
+
+    /* Optional: Additional styles for the entire filters section */
+    .filters-container {
+        border-bottom: 2px solid #333; /* Bold bottom border */
+        padding-bottom: 10px; /* Space below the border */
+    }
+</style>
+
+  
+    
+  <div class="filters">
+    <div class="filter">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+  
+    <div class="filter">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </div>
+  
+    <div class="filter">
+      <div><i class="fa-solid fa-building-columns"></i></div>
+      <p>Colleges</p>
+    </div>
+  
+    <div class="filter">
+      <div><i class="fa-solid fa-chalkboard-user"></i></div>
+      <p>Edtechs</p>
+    </div>
+  
+    <div class="filter">
+      <div><i class="fa-solid fa-utensils"></i></div>
+      <p>Restaurants</p>
+    </div>
+    
+  </div>
+  
+  <div class="card-container">
+    <% for (let listing of allListings) { %>
+      <div class="card">
+        <a href="/listings/<%= listing._id %>">   <!-- This is adding functinality to make image clickable (Anchor tag )-->
+          <!-- Check if the image and image.url exist -->
+          <img class="card-img-top" 
+               src="<%= listing.image && listing.image.url ? listing.image.url : '/path/to/default/image.jpg' %>" 
+               alt="<%= listing.title %>">
+        </a>
+        <!-- <div class="label">Guest favourite</div>
+        <div class="heart-icon">❤️</div> -->
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <p class="card-text">Location: <%= listing.location %></p>
+          <p class="card-text">Location: <%= listing.country %></p>
+          <!-- <a href="/listings/<%= listing._id %>" class="btn btn-primary">View Details</a> -->
+        </div>
+      </div>
+    <% } %>
+  </div>
+</body>

@@ -1,0 +1,608 @@
+    .navbar {
+        height: 5rem; /* Set a specific height for the navbar */
+        background-color: white !important; /* White background for the navbar */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        margin-top: -10px !important; /* Remove top margin */
+        padding: 0;
+    }
+
+    .fa-code, .nav-link i {
+        color: #fe424d; /* Default icon color */
+        transition: color 0.3s, transform 0.3s; /* Smooth transition for color and scale */
+    }
+
+    .fa-code {
+        font-size: 2rem; /* Size of the brand icon */
+        margin-right: 0.5rem; /* Space between icon and brand text */
+    }
+
+    .navbar-brand {
+        font-size: 24px; /* Increased font size for brand text */
+        color: #222222; /* Dark color for brand text */
+        text-decoration: none; /* Remove underline from brand link */
+        margin-top: -8px; /* Move the brand text up */
+    }
+
+    .navbar-toggler {
+        border-color: #fe424d; /* Change border color to match brand color */
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;..."); /* Custom icon for toggler (if needed) */
+    }
+
+    .nav-link {
+        color: #222222 !important; /* Dark link color */
+        font-weight: 500; /* Slightly bolder font weight */
+        padding: 10px 15px; /* Padding around links */
+        transition: color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    .nav-link:hover {
+        color: #fe424d; /* Change link color on hover to match brand color */
+        text-decoration: underline; /* Underline on hover */
+    }
+
+    .nav-item b {
+        color: #fe424d; /* Change bold link color */
+    }
+
+    /* Hover effects for icons */
+    .nav-link:hover i {
+        color: #fe424d; /* Change icon color on hover */
+        transform: scale(1.2); /* Scale the icon slightly */
+    }
+
+    /* Search Container */
+.search-container {
+    display: flex;
+    justify-content: center; /* Center the search form */
+    align-items: center;
+    flex-grow: 5; /* Allow the search container to grow */
+    margin-left: 200px;
+}
+
+.search-form {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.search-input {
+    padding: 0.5rem 0.8rem; /* Adjusted padding for a sleeker look */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 20px; /* More rounded corners */
+    outline: none; /* Remove outline on focus */
+    transition: border 0.3s; /* Smooth transition for border */
+    font-size: 14px; /* Smaller font size */
+    width: 200px; /* Fixed width for input */
+}
+
+.search-input:focus {
+    border-color: #fe424d; /* Change border color on focus */
+}
+
+.search-button {
+    background-color: #fe424d; /* Button color */
+    border: none; /* Remove border */
+    color: white; /* Text color */
+    padding: 0.5rem 0.8rem; /* Adjusted padding for the button */
+    border-radius: 20px; /* More rounded corners */
+    margin-left: 0.5rem; /* Space between input and button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    font-size: 14px; /* Smaller font size for button */
+}
+
+.search-button:hover {
+    background-color: #d63a3c; /* Darken button on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 5px 10px; /* Reduced padding on smaller screens */
+    }
+
+    .nav-link {
+        font-size: 14px; /* Smaller font size for links */
+    }
+
+    .search-input {
+        font-size: 14px; /* Smaller font size for search input */
+        width: 150px; /* Adjust width for smaller screens */
+    }
+
+    .search-button {
+        font-size: 14px; /* Smaller font size for search button */
+    }
+}
+
+
+
+
+/* Footer styles */
+/* Footer styles */
+footer {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns items in the center vertically */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+}
+
+.footer-left p {
+    margin: 0; /* Remove default margin for p */
+}
+
+.footer-left nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px; /* Add some space between company name and nav links */
+}
+
+.footer-left nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-left nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center; /* Center align items */
+    gap: 20px;
+}
+
+.language-currency a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+.language-currency a i {
+    margin-right: 5px;
+}
+
+.social-icons a {
+    margin-left: 10px;
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Change color on hover, you can modify as needed */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to start on smaller screens */
+    }
+
+    .footer-right {
+        margin-top: 15px;
+    }
+
+    .social-icons a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}
+
+
+/* Card container style */
+.card-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: space-between; /* Space between cards */
+    gap: 20px; /* Add space between cards */
+    padding: 20px; /* Add padding around the container */
+}
+
+/* Card style */
+.card {
+    flex: 1 1 calc(20% - 20px); /* Adjust to 5 cards in a row, with space between */
+    margin: 10px; /* Adjust margin for consistent spacing */
+    overflow: hidden; /* Ensure no overflow */
+    border-radius: 8px; /* Optional: for rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add some shadow */
+    max-width: 300px; /* Limit max width of the card */
+    min-width: 250px; /* Ensure minimum width for smaller screens */
+}
+
+/* Card image style */
+.card img {
+    width: 100%; /* Make the image fill the card width */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Cover ensures the image covers the entire area */
+    /* border-radius: 10px; */
+}
+
+/* Zoom effect on hover */
+.card:hover {
+    opacity: 0.9; /* Slight opacity on hover */
+    background-color: white;
+    transform: scale(1.05); /* Zoom effect */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .card {
+        flex: 1 1 calc(25% - 20px); /* 4 cards in a row on large screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 calc(33.33% - 20px); /* 3 cards in a row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); /* 2 cards in a row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%; /* Single card on very small screens */
+    }
+}
+
+/* Card body (price and location) */
+.card-body {
+    padding: 15px; /* Padding for the card body */
+    text-align: left; /* Align text to the left */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Slightly larger font for the title */
+    font-weight: bold; /* Bold title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.card-text {
+    font-size: 1rem; /* Base font size for text */
+    margin: 5px 0; /* Margin for spacing between lines */
+    color: #555; /* Darker gray for better readability */
+}
+
+.price {
+    color: #28a745; /* Green color for the price */
+    font-weight: bold; /* Bold price */
+    font-size: 1.1rem; /* Slightly larger font size */
+}
+
+.location {
+    color: #007bff; /* Blue color for the location */
+    font-style: italic; /* Italic style for location */
+}
+
+
+
+
+/* Styles for overlay labels like "Guest favourite" */
+.label {
+    position: absolute;
+    top: 10px; /* Position at the top */
+    left: 10px; /* Position at the left */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding */
+    font-weight: bold; /* Bold text */
+    color: #000; /* Black text color */
+    z-index: 1; /* Ensure it's above other elements */
+}
+
+/* Style for the heart icon button */
+.heart-icon {
+    position: absolute;
+    top: 10px; /* Adjust position */
+    right: 10px; /* Adjust position */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1; /* Ensure it's above other elements */
+}
+
+
+
+
+
+
+
+
+
+/* code for show.ejs*/
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+/* Listing Title */
+.listing-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Listing Card */
+.listing-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Listing Image */
+.listing-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Card Body */
+.listing-card-body {
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+/* Listing Description */
+.listing-description {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Listing Details */
+.listing-details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.listing-detail {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Edit Link */
+.edit-listing-link {
+    display: inline-block;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.edit-listing-link:hover {
+    text-decoration: underline;
+}
+
+/* Delete Button */
+.delete-listing-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-listing-button:hover {
+    background-color: #c82333;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 25px; /* Space between buttons */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* edit.ejs*?
+
+/* Title Styling */
+.edit-listing-title, .new-listing-title {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+    text-align: center; /* Centered title */
+}
+
+/* Form Container */
+.edit-listing-form, .new-listing-form {
+    max-width: 600px !important;
+    margin: auto !important;
+    padding: 30px !important; /* Increased padding */
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    background-color: #e9f5ff !important; /* Specific background color */
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 15px !important;
+}
+
+/* Input and Textarea Styling */
+.form-input {
+    width: 100% !important;
+    padding: 10px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1) !important;
+    font-size: 16px !important;
+}
+
+/* Flex Container for Price, Country, and Location */
+.form-group-flex {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+/* Flex Item Styling */
+.flex-item {
+    flex: 1 !important;
+    margin-right: 10px !important; /* Space between items */
+}
+
+/* Remove right margin for the last flex item */
+.flex-item:last-child {
+    margin-right: 0 !important;
+}
+
+/* Submit Button Styling */
+.submit-button {
+    background-color: #007bff !important; /* Bootstrap primary color */
+    color: white !important;
+    border: none !important;
+    padding: 10px 15px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+}
+
+.submit-button:hover {
+    background-color: #0056b3 !important; /* Darker shade on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*css for new listing file new.ejs*/
+
+
+/* Form Container Styling */
+/* Form Container */
+.form-container {
+    background-color: #f8f9fa !important; /* Light gray background */
+    padding: 15px !important; /* Reduced padding around the container */
+    border-radius: 8px !important; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+    max-width: 600px !important; /* Set a maximum width for the container */
+    margin: 20px auto !important; /* Center the container */
+}
+
+/* Form Card */
+.form-card {
+    background-color: #ffffff !important; /* White background for form */
+    padding: 20px !important; /* Reduced padding inside the card */
+    border-radius: 8px !important; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(223, 5, 5, 0.705) !important; /* Subtle shadow */
+}
+
+/* Title Styling */
+.form-title {
+    font-size: 20px !important; /* Reduced title font size */
+    margin-bottom: 15px !important; /* Space below title */
+    margin-top: 10px !important; /* Adjusted space above title */
+    text-align: center !important; /* Center the title */
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 15px !important; /* Adjusted space between fields */
+}
+
+/* Form Row Styling */
+.form-row {
+    display: flex !important; /* Flexbox for row alignment */
+    gap: 10px !important; /* Space between fields in the row */
+}
+
+/* Form Column Styling */
+.form-column {
+    flex: 1; /* Equal width for columns */
+}
+
+/* Input and Textarea Styling */
+.form-control {
+    width: 100% !important; /* Full width */
+    padding: 10px !important; /* Padding inside inputs */
+    border: 1px solid #ccc !important; /* Border color */
+    border-radius: 4px !important; /* Rounded edges */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Inner shadow */
+    font-size: 16px !important; /* Font size */
+}
+
+/* Row for Price, Country, and Location */
+.form-row {
+    display: flex !important; /* Flexbox for alignment */
+    justify-content: space-between !important; /* Space between items */
+    margin-bottom: 15px !important; /* Space below the row */
+}
+
+/* Column Styling for Form Inputs */
+.form-column {
+    flex: 1 !important; /* Each column takes equal space */
+    margin-right: 10px !important; /* Right margin for space */
+}
+
+/* Remove right margin for the last column */
+.form-column:last-child {
+    margin-right: 0 !important;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff !important; /* Bootstrap primary color */
+    color: white !important; /* White text color */
+    padding: 10px 15px !important; /* Padding for button */
+    border: none !important; /* No border */
+    border-radius: 5px !important; /* Rounded edges */
+    cursor: pointer !important; /* Pointer cursor on hover */
+    font-size: 16px !important; /* Font size */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3 !important; /* Darker shade on hover */
+}

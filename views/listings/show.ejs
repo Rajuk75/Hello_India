@@ -1,0 +1,128 @@
+<% layout("layouts/boilerplate") %>
+<body>
+  <h3 class="listing-title"><%= listing.title %></h3>
+
+  <div class="listing-card" style="width: 18rem;">
+    <% if (listing.image && listing.image.url) { %>
+      <img class="listing-image" src="<%= listing.image.url %>" alt="listing_image">
+    <% } else { %>
+      <img class="listing-image" src="placeholder-image-url.jpg" alt="No image available"> 
+    <% } %>
+  </div>
+
+  <ul class="listing-details">
+    <li class="listing-detail"><strong>Listed By:</strong> 
+      <% if (listing.owner && listing.owner.username) { %>
+        <%= listing.owner.username %>
+      <% } else { %>
+        Owner information unavailable
+      <% } %>
+    </li>
+    <li class="listing-detail"><strong>Description:</strong> <%= listing.description %></li>
+    <li class="listing-detail"><strong>Starting Price/Fees:</strong> &#8377; 
+      <% if (listing.price) { %> 
+        <%= listing.price.toLocaleString("en-IN") %> 
+      <% } else { %> 
+        Price not available 
+      <% } %>/-
+    </li>
+    <li class="listing-detail"><strong>Location:</strong> <%= listing.location %></li>
+    <li class="listing-detail"><strong>Country:</strong> <%= listing.country %></li>
+  </ul>
+
+  <br/>
+
+  <!-- Edit and delete buttons, only shown if the current user is the owner of the listing -->
+  <% if (currUser && listing.owner && listing.owner._id.toString() === currUser._id.toString()) { %>
+    <div class="action-buttons">
+      <a class="btn btn-warning" href="/listings/<%= listing._id %>/edit">Edit this Listing</a>
+      <form class="delete-listing-form" method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+        <button class="delete-listing-button btn btn-danger">Delete this Listing</button>
+      </form>
+    </div>
+  <% } %>
+
+  <!-- Review Form -->
+  <br> 
+  <div>
+    <% if (currUser) { %>
+      <h4>Leave a Review!</h4>
+      <form action="/listings/<%= listing._id %>/reviews" method="POST" novalidate class="needs-validation">
+        <div>
+          <label for="rating">Rating</label>
+          <br><br>
+          <fieldset class="starability-slot">
+            <input type="radio" id="star1" name="review[Rating]" value="1" required/>
+            <label for="star1" title="Terrible">1 stars</label>
+        
+            <input type="radio" id="star2" name="review[Rating]" value="2" required/>
+            <label for="star2" title="Not good">2 stars</label>
+        
+            <input type="radio" id="star3" name="review[Rating]" value="3" required/>
+            <label for="star3" title="Average">3 stars</label>
+        
+            <input type="radio" id="star4" name="review[Rating]" value="4" required/>
+            <label for="star4" title="Very good">4 stars</label>
+        
+            <input type="radio" id="star5" name="review[Rating]" value="5" required/>
+            <label for="star5" title="Amazing">5 star</label>
+          </fieldset>
+        </div>
+        
+
+        <br>
+
+        <div>
+          <label for="comment">Comment</label>
+          <textarea name="review[Comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
+          <div class="invalid-feedback">
+            Please enter a valid comment.
+          </div>
+        </div>
+
+        <br>
+
+        <div>
+          <button type="submit" class="btn btn-primary">Submit Your Review</button>
+        </div>
+      </form>
+    <% } %>
+    <!-- Review Form -->
+    
+    <hr>
+    <!-- Reviews Section -->
+    <div class="container">
+      <h4>Reviews:</h4>
+      <div class="review">
+        <ul>
+          <% for (let i = 0; i < listing.reviews.length; i++) { %>
+            <% let review = listing.reviews[i]; %>
+            <li>
+              <p><strong>Author: <%= review.author.username %></strong><br>India</p>
+              <p class="starability-result" data-rating="<%= review.Rating %>">
+                <% for (let j = 1; j <= 5; j++) { %>
+                  <% if (j <= review.Rating) { %>
+                    <span class="star">&#9733;</span> <!-- Filled Star -->
+                  <% } else { %>
+                    <span class="star">&#9734;</span> <!-- Empty Star -->
+                  <% } %>
+                <% } %>
+              </p>
+
+              <p><%= review.Comment %></p>
+              
+              <!-- Only show delete button if currUser is the review's author or the listing's owner -->
+              <% if (currUser && (review.author._id.toString() === currUser._id.toString() || listing.owner._id.toString() === currUser._id.toString())) { %>
+                <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                  <button type="submit" class="btn btn-danger">Delete this Review</button>
+                </form>
+              <% } %>
+              <hr>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+    <!-- Reviews Section -->
+  </div>
+</body>
